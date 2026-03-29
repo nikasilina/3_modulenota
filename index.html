@@ -1,14 +1,297 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nota</title>
-    <link rel="stylesheet" href="theory.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nota Perfume Poster</title>
+  <link rel="stylesheet" href="stylesheets/layout.css">
+  <link rel="stylesheet" href="stylesheets/animation.css">
 </head>
 <body>
-    <div id="container"></div>
-    <script src="script.js"></script>
-    
+  <main class="site-shell">
+    <section class="hero-section" id="top">
+      <div class="poster-frame">
+        <div class="poster-stage">
+          <img class="poster-logo" src="images/logo.jpg" alt="Nota">
+
+          <nav class="poster-nav" aria-label="Навигация по странице">
+            <a href="#labyrinth" class="poster-nav__link">лабиринт</a>
+            <span class="poster-nav__arrow" aria-hidden="true">→</span>
+            <a href="#place" class="poster-nav__link">место</a>
+            <span class="poster-nav__arrow" aria-hidden="true">→</span>
+            <a href="#pair" class="poster-nav__link">пара</a>
+            <span class="poster-nav__arrow" aria-hidden="true">→</span>
+            <a href="#package" class="poster-nav__link">упаковка</a>
+          </nav>
+
+          <div class="poster-copy" aria-label="Создай свой уникальный парфюм">
+            <span class="poster-word poster-word--create" data-delay="0">СОЗДАЙ</span>
+            <span class="poster-word poster-word--own" data-delay="180">(СВОЙ)</span>
+            <span class="poster-word poster-word--unique" data-delay="360">УНИКАЛЬНЫЙ</span>
+            <span class="poster-word poster-word--perfume" data-delay="540">ПАРФЮМ</span>
+          </div>
+
+          <img class="poster-object poster-object--berry" src="images/rasberry 1 block.png" alt="Малина">
+          <img class="poster-object poster-object--flower" src="images/flower 1 block.png" alt="Цветок">
+          <img class="poster-object poster-object--bottle" src="images/perfume 1 block.png" alt="Флакон парфюма">
+        </div>
+      </div>
+    </section>
+
+    <section class="labyrinth-section" id="labyrinth">
+      <div class="labyrinth-frame">
+        <div class="labyrinth-stage">
+          <div class="labyrinth-copy">
+            <div class="labyrinth-copy__head">
+              <div class="labyrinth-badge">1</div>
+              <h2>ЛАБИРИНТ</h2>
+            </div>
+
+            <p class="labyrinth-copy__text">Пройди лабиринт и собери<br>все ингредиенты</p>
+
+            <div class="labyrinth-controls" aria-label="Управление лабиринтом">
+              <button class="labyrinth-control labyrinth-control--up" type="button" data-move="up" aria-label="Вверх">
+                <img src="images/button up.png" alt="">
+              </button>
+              <button class="labyrinth-control labyrinth-control--left" type="button" data-move="left" aria-label="Влево">
+                <img src="images/button left.png" alt="">
+              </button>
+              <button class="labyrinth-control labyrinth-control--right" type="button" data-move="right" aria-label="Вправо">
+                <img src="images/button right.png" alt="">
+              </button>
+              <button class="labyrinth-control labyrinth-control--down" type="button" data-move="down" aria-label="Вниз">
+                <img src="images/button down.png" alt="">
+              </button>
+            </div>
+
+            <p class="labyrinth-status" aria-live="polite">Собрано <span data-found-count>0</span> / <span data-total-count>5</span></p>
+          </div>
+
+          <div class="maze-board" aria-label="Интерактивный лабиринт">
+            <img class="maze-board__image" src="images/labirinth.png" alt="Лабиринт с ингредиентами">
+            <div class="maze-wall maze-wall--h maze-wall--h1"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h2"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h3"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h4"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h5"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h6"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h7"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h8"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h9"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h10"></div>
+            <div class="maze-wall maze-wall--h maze-wall--h11"></div>
+
+            <div class="maze-wall maze-wall--v maze-wall--v1"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v2"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v3"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v4"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v5"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v6"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v7"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v8"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v9"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v10"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v11"></div>
+            <div class="maze-wall maze-wall--v maze-wall--v12"></div>
+
+            <div class="maze-player" data-maze-player></div>
+
+            <img class="maze-item maze-item--peach" src="images/peach block 2.png" alt="Персик" data-maze-item="peach" data-node="n3">
+            <img class="maze-item maze-item--hibiscus" src="images/flower block 2.png" alt="Цветок" data-maze-item="hibiscus" data-node="n12">
+            <img class="maze-item maze-item--tube" src="images/gummy block 2.png" alt="Ингредиент" data-maze-item="tube" data-node="n10">
+            <img class="maze-item maze-item--plumeria" src="images/pink flower block 2.png" alt="Розовый цветок" data-maze-item="plumeria" data-node="n17">
+            <img class="maze-item maze-item--berry" src="images/blueberry block 2.png" alt="Черника" data-maze-item="berry" data-node="n24">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="place-section" id="place">
+      <div class="place-frame">
+        <div class="place-stage">
+          <img
+            class="place-bottle place-bottle--pink"
+            src="images/pink perfume block 3.png"
+            alt="Розовый флакон"
+            data-place-bottle="pink"
+          >
+          <img
+            class="place-bottle place-bottle--green"
+            src="images/green perfume block 3.png"
+            alt="Зеленый флакон"
+            data-place-bottle="green"
+          >
+          <img
+            class="place-bottle place-bottle--blue"
+            src="images/blue perfume block 3.png"
+            alt="Голубой флакон"
+            data-place-bottle="blue"
+          >
+
+          <div class="place-target place-target--pink" data-place-target="pink">
+            <img src="images/pink dots pic block 3.png" alt="">
+          </div>
+          <div class="place-target place-target--blue" data-place-target="blue">
+            <img src="images/blue dots pic block 3.png" alt="">
+          </div>
+          <div class="place-target place-target--green" data-place-target="green">
+            <img src="images/green dots pic block 3.png" alt="">
+          </div>
+
+          <div class="place-copy">
+            <div class="place-copy__head">
+              <div class="place-badge">2</div>
+              <h2>МЕСТО</h2>
+            </div>
+            <p class="place-copy__text">Поставь флаконы<br>на нужное место</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="pair-section" id="pair">
+      <div class="pair-frame">
+        <div class="pair-stage">
+          <div class="pair-copy">
+            <div class="pair-copy__head">
+              <div class="pair-badge">3</div>
+              <h2>ПАРА</h2>
+            </div>
+            <p class="pair-copy__text">Найди пару для<br>каждого значка</p>
+          </div>
+
+          <div class="pair-grid" aria-label="Игра на поиск пары">
+            <button class="pair-card" type="button" data-pair-card="flower" data-back-tone="pink">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card pink block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+
+            <button class="pair-card" type="button" data-pair-card="butterfly" data-back-tone="green">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card orange block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+
+            <button class="pair-card" type="button" data-pair-card="hand" data-back-tone="blue">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card yellow block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+
+            <button class="pair-card" type="button" data-pair-card="hand" data-back-tone="blue">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card yellow block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+
+            <button class="pair-card" type="button" data-pair-card="flower" data-back-tone="pink">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card pink block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+
+            <button class="pair-card" type="button" data-pair-card="butterfly" data-back-tone="green">
+              <span class="pair-card__inner">
+                <span class="pair-card__face pair-card__face--back"></span>
+                <span class="pair-card__face pair-card__face--front">
+                  <img src="images/card orange block 4.png" alt="">
+                </span>
+              </span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="package-section" id="package">
+      <div class="package-frame">
+        <div class="package-stage">
+          <div class="package-swatches" aria-label="Выбор картинки упаковки">
+            <button class="package-swatch package-swatch--green is-active" type="button" data-package-theme="green" aria-label="Зеленый дизайн">
+              <img src="images/circle green block 5.png" alt="">
+            </button>
+            <button class="package-swatch package-swatch--pink" type="button" data-package-theme="pink" aria-label="Розовый дизайн">
+              <img src="images/circle pink block 5.png" alt="">
+            </button>
+            <button class="package-swatch package-swatch--blue" type="button" data-package-theme="blue" aria-label="Синий дизайн">
+              <img src="images/circle blue block 5.png" alt="">
+            </button>
+          </div>
+
+          <div class="package-workspace">
+            <img class="package-artwork" src="images/packaging green.svg?v=2" alt="Развертка упаковки" data-package-artwork>
+            <canvas class="package-canvas" data-package-canvas></canvas>
+          </div>
+
+          <div class="package-copy">
+            <div class="package-copy__head">
+              <div class="package-badge">4</div>
+              <h2>УПАКОВКА</h2>
+            </div>
+            <p class="package-copy__text">Распиши упаковку<br>своего парфюма<br>и выбери картинку</p>
+          </div>
+
+          <button class="package-pen" type="button" data-package-pen aria-label="Режим рисования">
+            <span class="package-pen__body"></span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="catch-section" id="catch">
+      <div class="catch-frame">
+        <div class="catch-stage">
+          <div class="catch-copy">
+            <div class="catch-copy__head">
+              <div class="catch-badge">5</div>
+              <h2>ЛОВИ!</h2>
+            </div>
+            <p class="catch-copy__text">Поздравляю! Твой уникальный<br>аромат готов!</p>
+          </div>
+
+          <div class="catch-playfield" data-catch-field>
+            <div class="catch-glow"></div>
+            <img
+              class="catch-bottle is-running"
+              src="images/perfume lovi run.svg"
+              alt="Флакон парфюма"
+              data-catch-bottle
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="credits-section">
+      <div class="credits-frame">
+        <div class="credits-stage">
+          <div class="credits-copy">
+            <p>КУРАТОРЫ: ЦВЕТНИКОВ НИКОЛАЙ; КОМКОВА АННА</p>
+            <p>СТУДЕНТ: СИЛИНА ВЕРОНИКА</p>
+          </div>
+
+          <img class="credits-logo" src="images/logo.jpg" alt="Логотип nota">
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
 </body>
 </html>
